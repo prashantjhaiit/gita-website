@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GITA - Grameen Institute of Technical Advancement | बेलापट्टी, सुपौल</title>
+    <meta name="description" content="GITA - Grameen Institute of Technical Advancement, Belapatti, Triveniganj, Supaul, Bihar. Computer courses, tuition for Class 9-12. Since 2008.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --saffron: #E8871E;
+            --saffron-dark: #C66A0A;
+            --gold: #D4A338;
+            --cream: #FFF9F0;
+            --dark: #2D2014;
+            --text: #3D2E1F;
+            --text-light: #6B5744;
+            --white: #FFFFFF;
+            --green: #2E7D32;
+            --blue: #1565C0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== HEADER / NAV ===== */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top {
+            background: var(--saffron);
+            color: var(--white);
+            text-align: center;
+            padding: 6px 16px;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-area img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo-text h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--saffron-dark);
+            line-height: 1.2;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .logo-text .subtitle {
+            font-size: 11px;
+            color: var(--text-light);
+        }
+
+        /* Mobile menu */
+        .menu-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .menu-btn span {
+            width: 24px;
+            height: 2.5px;
+            background: var(--dark);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        nav {
+            display: none;
+            background: var(--white);
+            border-top: 1px solid #eee;
+        }
+
+        nav.open { display: block; }
+
+        nav a {
+            display: block;
+            padding: 14px 24px;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 16px;
+            font-weight: 500;
+            border-bottom: 1px solid #f0ebe4;
+            transition: background 0.2s;
+        }
+
+        nav a:hover, nav a:active {
+            background: var(--cream);
+            color: var(--saffron-dark);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--saffron) 0%, var(--gold) 100%);
+            color: var(--white);
+            padding: 40px 20px 48px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+
+        .hero .hindi-motto {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto 24px;
+            opacity: 0.93;
+            line-height: 1.6;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 28px;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-width: 220px;
+            justify-content: center;
+        }
+
+        .btn:active { transform: scale(0.97); }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(37,211,102,0.3);
+        }
+
+        .btn-call {
+            background: var(--white);
+            color: var(--saffron-dark);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .section-title h2 {
+            font-size: 24px;
+            color: var(--saffron-dark);
+            margin-bottom: 4px;
+        }
+
+        .section-title p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* ===== ABOUT ===== */
+        .about-content {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .about-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .about-text {
+            padding: 24px;
+        }
+
+        .about-text p {
+            font-size: 15px;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .highlight-card {
+            background: var(--cream);
+            padding: 16px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .highlight-card .number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--saffron);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .highlight-card .label {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* ===== COURSES ===== */
+        .courses-section { background: var(--white); }
+
+        .course-category {
+            margin-bottom: 24px;
+        }
+
+        .course-category h3 {
+            font-size: 18px;
+            color: var(--saffron-dark);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--cream);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .course-card {
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--saffron);
+        }
+
+        .course-card h4 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .course-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        .course-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .course-topics {
+            margin-top: 8px;
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item.wide {
+            grid-column: span 2;
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-caption {
+            font-size: 12px;
+            text-align: center;
+            padding: 6px;
+            color: var(--text-light);
+            background: var(--white);
+        }
+
+        /* ===== RESULTS ===== */
+        .results-section {
+            background: var(--white);
+        }
+
+        .result-card {
+            background: var(--cream);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .result-card img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            background: #f5f0e8;
+        }
+
+        .result-info {
+            padding: 16px;
+        }
+
+        .result-info h4 {
+            font-size: 16px;
+            color: var(--dark);
+        }
+
+        .result-info p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .grade-badge {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* ===== CONTACT & MAP ===== */
+        .contact-section {
+            background: linear-gradient(135deg, var(--dark) 0%, #4A3728 100%);
+            color: var(--white);
+            max-width: 100%;
+            padding: 40px 20px;
+        }
+
+        .contact-section .section-title h2 {
+            color: var(--gold);
+        }
+
+        .contact-section .section-title p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .contact-cards {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 14px;
+            padding: 20px;
+            margin-bottom: 14px;
+            text-align: center;
+        }
+
+        .contact-card h3 {
+            font-size: 15px;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .contact-card p, .contact-card a {
+            font-size: 15px;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            line-height: 1.6;
+        }
+
+        .contact-card a:hover { text-decoration: underline; }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-map {
+            background: var(--blue);
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(21,101,192,0.3);
+        }
+
+        .map-container {
+            max-width: 900px;
+            margin: 24px auto 0;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 280px;
+            border: none;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 24px 20px;
+            font-size: 13px;
+        }
+
+        footer .footer-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        footer p { margin-bottom: 4px; }
+
+        footer a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* ===== FLOATING WHATSAPP ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+            z-index: 99;
+            transition: transform 0.2s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:active { transform: scale(0.9); }
+
+        .whatsapp-float svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        /* ===== DESKTOP ===== */
+        @media (min-width: 768px) {
+            .menu-btn { display: none; }
+            nav {
+                display: flex !important;
+                border-top: none;
+                max-width: 1100px;
+                margin: 0 auto;
+                justify-content: center;
+            }
+            nav a {
+                border-bottom: none;
+                padding: 12px 18px;
+                font-size: 15px;
+            }
+            .hero h2 { font-size: 36px; }
+            .hero-buttons { flex-direction: row; }
+            .about-content { display: grid; grid-template-columns: 1fr 1fr; }
+            .about-img { height: 100%; min-height: 300px; }
+            .gallery-grid { grid-template-columns: 1fr 1fr 1fr; }
+            .gallery-item.wide { grid-column: span 2; }
+            .contact-buttons { flex-direction: row; justify-content: center; }
+            .btn { min-width: 200px; }
+            .map-container iframe { height: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-top">
+        ✦ Since 2008 | ISO 9001:2015 Certified | SITED Authorized (Code: 4914) ✦
+    </div>
+    <div class="header-main">
+        <div class="logo-area">
+            <img src="images/logo.jpg" alt="GITA Logo" loading="lazy">
+            <div class="logo-text">
+                <h1>GITA</h1>
+                <span class="subtitle">Grameen Institute of Technical Advancement</span>
+            </div>
+        </div>
+        <button class="menu-btn" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <nav>
+        <a href="#home" onclick="document.querySelector('nav').classList.remove('open')">🏠 होम</a>
+        <a href="#about" onclick="document.querySelector('nav').classList.remove('open')">📖 हमारे बारे में</a>
+        <a href="#courses" onclick="document.querySelector('nav').classList.remove('open')">📚 कोर्सेज</a>
+        <a href="#gallery" onclick="document.querySelector('nav').classList.remove('open')">📸 गैलरी</a>
+        <a href="#results" onclick="document.querySelector('nav').classList.remove('open')">🏆 रिज़ल्ट</a>
+        <a href="#contact" onclick="document.querySelector('nav').classList.remove('open')">📞 संपर्क</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <h2>GITA — ग्रामीण तकनीकी उन्नति संस्थान</h2>
+    <p class="hindi-motto">ज्ञानं सामर्थ्यम्सि</p>
+    <p>
+        बेलापट्टी, त्रिवेणीगंज, सुपौल (बिहार) में 2008 से चल रहा
+        कंप्यूटर शिक्षा एवं ट्यूशन केंद्र। गाँव के बच्चों को बेहतर भविष्य की ओर ले जाने का प्रयास।
+    </p>
+    <div class="hero-badges">
+        <span class="badge">💻 कंप्यूटर कोर्स</span>
+        <span class="badge">📘 Class 9-12 ट्यूशन</span>
+        <span class="badge">📜 सरकार द्वारा मान्यता प्राप्त</span>
+    </div>
+    <div class="hero-buttons">
+        <a href="https://wa.me/919868485131?text=नमस्ते%2C%20GITA%20कोचिंग%20के%20बारे%20में%20जानकारी%20चाहिए" class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.106 1.519 5.834L0 24l6.335-1.652A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.91 0-3.72-.51-5.32-1.403l-.382-.227-3.96 1.033 1.06-3.873-.25-.395A9.78 9.78 0 012.182 12 9.818 9.818 0 0112 2.182 9.818 9.818 0 0121.818 12 9.818 9.818 0 0112 21.818z"/></svg>
+            WhatsApp पर संपर्क करें
+        </a>
+        <a href="tel:+919868485131" class="btn btn-call">
+            📞 कॉल करें: 9868485131
+        </a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="section-title">
+        <h2>📖 हमारे बारे में / About Us</h2>
+        <p>गाँव में शिक्षा की रोशनी — 2008 से</p>
+    </div>
+    <div class="about-content">
+        <img src="images/teaching.jpg" alt="विजय कुमार झा जी कंप्यूटर सिखाते हुए" class="about-img" loading="lazy">
+        <div class="about-text">
+            <p>
+                <strong>GITA (ग्रामीण तकनीकी उन्नति संस्थान)</strong> की स्थापना
+                <strong>श्री विजय कुमार झा</strong> जी ने 2008 में अपने गाँव बेलापट्टी के दुआर पर की।
+                उनका एक ही सपना है — गाँव के बच्चों को शहर जाए बिना अच्छी कंप्यूटर शिक्षा और ट्यूशन मिले।
+            </p>
+            <p>
+                यहाँ Class 9 से 12 तक की ट्यूशन के साथ-साथ कंप्यूटर के कई कोर्स भी कराए जाते हैं —
+                बेसिक कंप्यूटर, टाइपिंग, MS Office, Python प्रोग्रामिंग, डिजिटल मार्केटिंग और भी बहुत कुछ।
+            </p>
+            <p>
+                SITED (भारत सरकार द्वारा लाइसेंस प्राप्त) से मान्यता प्राप्त —
+                सभी कोर्स पूरा करने पर सर्टिफिकेट/डिप्लोमा दिया जाता है।
+            </p>
+            <div class="about-highlights">
+                <div class="highlight-card">
+                    <div class="number">18+</div>
+                    <div class="label">साल का अनुभव</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="number">500+</div>
+                    <div class="label">छात्र पढ़ चुके हैं</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="number">10+</div>
+                    <div class="label">कोर्सेज उपलब्ध</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="number">ISO</div>
+                    <div class="label">9001:2015 प्रमाणित</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses" class="courses-section">
+    <div class="section-title">
+        <h2>📚 कोर्सेज / Courses</h2>
+        <p>कंप्यूटर कोर्स + ट्यूशन — सब एक जगह</p>
+    </div>
+
+    <div class="course-category">
+        <h3>🖥️ डिप्लोमा कोर्सेज (1 साल)</h3>
+
+        <div class="course-card">
+            <h4>PG-Diploma in Computer Skills (PG-DCS)</h4>
+            <div class="course-meta">
+                <span>📋 योग्यता: Graduate</span>
+                <span>⏱ अवधि: 1 साल</span>
+            </div>
+            <p class="course-topics">MS Office, Python, Database, MySQL, Networking, Internet</p>
+        </div>
+
+        <div class="course-card">
+            <h4>Diploma in Computer Instructor Training (DCITS)</h4>
+            <div class="course-meta">
+                <span>📋 योग्यता: 12th पास</span>
+                <span>⏱ अवधि: 1 साल</span>
+            </div>
+            <p class="course-topics">Computer Fundamentals, MS Office, Python, MySQL, Networking</p>
+        </div>
+
+        <div class="course-card">
+            <h4>Honour Diploma in Computer Skills (HDCS)</h4>
+            <div class="course-meta">
+                <span>📋 योग्यता: 12th पास</span>
+                <span>⏱ अवधि: 1 साल</span>
+            </div>
+            <p class="course-topics">Typing, MS Office, Python, MySQL, Networking, Internet</p>
+        </div>
+
+        <div class="course-card">
+            <h4>Advance Diploma in Computer Skills (ADCS)</h4>
+            <div class="course-meta">
+                <span>📋 योग्यता: 10th पास</span>
+                <span>⏱ अवधि: 1 साल</span>
+            </div>
+            <p class="course-topics">Typing, MS Office, Python, MySQL, Networking, Internet</p>
+        </div>
+
+        <div class="course-card">
+            <h4>Advance Diploma in Computer Programming (ADCP)</h4>
+            <div class="course-meta">
+                <span>📋 योग्यता: 12th पास</span>
+                <span>⏱ अवधि: 1 साल</span>
+            </div>
+            <p class="course-topics">MS Office, Python, Database, MySQL, Networking</p>
+        </div>
+    </div>
+
+    <div class="course-category">
+        <h3>📝 सर्टिफिकेट कोर्सेज (6 महीने)</h3>
+
+        <div class="course-card">
+            <h4>Diploma in Computer Financial Accounting (DCFA)</h4>
+            <div class="course-meta">
+                <span>📋 योग्यता: 10th पास</span>
+                <span>⏱ अवधि: 6 महीने</span>
+            </div>
+            <p class="course-topics">Computer Fundamentals, MS Office, Database, MySQL</p>
+        </div>
+
+        <div class="course-card">
+            <h4>Advance Certificate in Computer Skills (ACCS)</h4>
+            <div class="course-meta">
+                <span>📋 योग्यता: —</span>
+                <span>⏱ अवधि: 1 साल</span>
+            </div>
+            <p class="course-topics">MS Office, Python, MySQL, Networking, Internet</p>
+        </div>
+    </div>
+
+    <div class="course-category">
+        <h3>⌨️ शॉर्ट टर्म कोर्सेज (1-6 महीने)</h3>
+
+        <div class="course-card">
+            <h4>Computer Typing (English / Hindi / दोनों)</h4>
+            <div class="course-meta">
+                <span>⏱ अवधि: 1 / 2 / 3 / 6 महीने</span>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <h4>Basic Computer Course</h4>
+            <div class="course-meta">
+                <span>⏱ अवधि: 1 / 2 / 3 / 6 महीने</span>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <h4>Internet Application Course</h4>
+            <div class="course-meta">
+                <span>⏱ अवधि: 1 हफ्ता / 1 महीना</span>
+            </div>
+        </div>
+
+        <div class="course-card">
+            <h4>Basic Programming Course</h4>
+            <div class="course-meta">
+                <span>⏱ अवधि: 1 / 2 / 3 / 6 महीने</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-category">
+        <h3>📘 ट्यूशन क्लासेज</h3>
+
+        <div class="course-card" style="border-left-color: var(--blue);">
+            <h4>Class IX, X, XI & XII — सभी विषय</h4>
+            <div class="course-meta">
+                <span>📋 Board Exam की तैयारी</span>
+                <span>👨‍🏫 अनुभवी शिक्षक</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <div class="section-title">
+        <h2>📸 गैलरी / Gallery</h2>
+        <p>हमारे कोचिंग की कुछ झलकियाँ</p>
+    </div>
+    <div class="gallery-grid">
+        <div class="gallery-item wide">
+            <img src="images/lab-wide.jpg" alt="कंप्यूटर लैब में छात्र पढ़ रहे हैं" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="images/lab-students.jpg" alt="कंप्यूटर लैब" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="images/computer-lab.jpg" alt="कंप्यूटर लैब सेटअप" loading="lazy">
+        </div>
+        <div class="gallery-item wide">
+            <img src="images/students-group.jpg" alt="छात्रों का ग्रुप फोटो" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="images/students-group2.jpg" alt="छात्रों का ग्रुप फोटो" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="images/saraswati-puja.jpg" alt="सरस्वती पूजा उत्सव" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="images/saraswati-puja2.jpg" alt="सरस्वती पूजा — विजय जी" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="images/teachers-day.jpg" alt="शिक्षक दिवस समारोह" loading="lazy">
+        </div>
+        <div class="gallery-item wide">
+            <img src="images/community.jpg" alt="ग्रामीण समुदाय" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="results-section">
+    <div class="section-title">
+        <h2>🏆 हमारे छात्रों की उपलब्धियाँ</h2>
+        <p>SITED द्वारा प्रमाणित डिप्लोमा और सर्टिफिकेट</p>
+    </div>
+    <div class="result-card">
+        <img src="images/certificate.jpg" alt="दीपा कुमारी का डिप्लोमा सर्टिफिकेट" loading="lazy">
+        <div class="result-info">
+            <h4>दीपा कुमारी — Advance Diploma in Computer Skills</h4>
+            <p>Session: January 2025 - December 2025 &nbsp; <span class="grade-badge">Grade: A+</span></p>
+        </div>
+    </div>
+    <p style="text-align:center; font-size:14px; color:var(--text-light); margin-top:16px;">
+        और भी कई छात्रों ने GITA से सर्टिफिकेट/डिप्लोमा प्राप्त किया है।<br>
+        जानकारी के लिए WhatsApp पर संपर्क करें।
+    </p>
+</section>
+
+<!-- CONTACT & MAP -->
+<section id="contact" class="contact-section">
+    <div class="section-title">
+        <h2>📞 संपर्क करें / Contact Us</h2>
+        <p>Admission और जानकारी के लिए बेझिझक संपर्क करें</p>
+    </div>
+    <div class="contact-cards">
+        <div class="contact-card">
+            <h3>📍 पता / Address</h3>
+            <p>
+                प्रेमाश्रम (Premashram)<br>
+                गाँव — बेलापट्टी, पोस्ट — गुरिया<br>
+                तहसील — त्रिवेणीगंज, जिला — सुपौल<br>
+                बिहार — 852214
+            </p>
+        </div>
+        <div class="contact-card">
+            <h3>📱 फोन / Phone</h3>
+            <p><a href="tel:+919868485131">📞 9868485131</a></p>
+        </div>
+        <div class="contact-card">
+            <h3>🕐 समय / Timings</h3>
+            <p>सोमवार से शनिवार — सुबह 8:00 से शाम 6:00 बजे तक</p>
+        </div>
+    </div>
+    <div class="contact-buttons">
+        <a href="https://wa.me/919868485131?text=नमस्ते%2C%20GITA%20कोचिंग%20में%20एडमिशन%20लेना%20है" class="btn btn-whatsapp" target="_blank" rel="noopener">
+            WhatsApp पर एडमिशन पूछें
+        </a>
+        <a href="https://maps.app.goo.gl/3Kq12mXHYLsmPiYz5" class="btn btn-map" target="_blank" rel="noopener">
+            📍 Google Maps पर देखें
+        </a>
+        <a href="tel:+919868485131" class="btn btn-call">
+            📞 अभी कॉल करें
+        </a>
+    </div>
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.0!2d86.6!3d26.1!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA2JzAwLjAiTiA4NsKwMzYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="GITA Location Map">
+        </iframe>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <img src="images/logo.jpg" alt="GITA" class="footer-logo" loading="lazy">
+    <p><strong>GITA — Grameen Institute of Technical Advancement</strong></p>
+    <p>बेलापट्टी, त्रिवेणीगंज, सुपौल, बिहार — 852214</p>
+    <p style="margin-top:8px;">Authorized by <a href="https://www.sarvaindia.com" target="_blank" rel="noopener">SITED (India)</a> | Centre Code: 4914</p>
+    <p style="margin-top:12px; opacity:0.5;">© 2008–2026 GITA. All Rights Reserved.</p>
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/919868485131?text=नमस्ते%2C%20GITA%20कोचिंग%20के%20बारे%20में%20जानकारी%20चाहिए" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp पर संपर्क करें">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.553 4.106 1.519 5.834L0 24l6.335-1.652A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818c-1.91 0-3.72-.51-5.32-1.403l-.382-.227-3.96 1.033 1.06-3.873-.25-.395A9.78 9.78 0 012.182 12 9.818 9.818 0 0112 2.182 9.818 9.818 0 0121.818 12 9.818 9.818 0 0112 21.818z"/></svg>
+</a>
+
+<script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
